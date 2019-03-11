@@ -11,13 +11,13 @@ export default class Landing extends Component {
           <div className="title">
             <h1>Lorraine Li</h1>
             <p>description here</p>
-          </div>
-          <GlobeImage />
+          </div> 
         </div>
+        <GlobeImage />
         <div className="menu">
-          <div>
+           <div>
             <h1>Menu</h1>
-          </div>
+          </div> 
         </div>
       </div>
     );
