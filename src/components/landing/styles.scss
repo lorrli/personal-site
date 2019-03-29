@@ -5,6 +5,9 @@
     align-items: center;
     justify-content: center;
     height: 65vh;
+    .hide {
+      display: none;
+    }
   }
   .circle {
     position: absolute;
