@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 /* import { Link } from "react-router-dom";
  */ import styles from "./styles.scss";
+import NavBar from "../navBar/index";
 
-export default class Landing extends Component {
+export default class About extends Component {
   /* handleOnClick() {
     this.props.history.push("/about");
   } */
@@ -10,7 +11,8 @@ export default class Landing extends Component {
   render() {
     return (
       <div className="container">
-        <div>
+        <NavBar active="about" />
+        <div className="header">
           <h1>ABOUT ME</h1>
         </div>
       </div>
