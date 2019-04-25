@@ -15,6 +15,7 @@ export default class About extends Component {
         <div className="header">
           <h1>ABOUT ME</h1>
         </div>
+        <div className="rectangle" />
       </div>
     );
   }
