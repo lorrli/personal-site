@@ -70,7 +70,12 @@ export default class Landing extends Component {
     /*     let moonArray = [];
      */
 
-    let moonTitleArray = ["About", "Work", "Hi3", "Hi4"];
+    let moonTitleArray = ["About", "Work", "Resume"];
+    let moonDescription = [
+      "Welcome to my site! Click to learn more about me.",
+      "Check out my passion projects and experiences",
+      "Get a copy of my resume"
+    ];
     // return [
     // <div className="landing">
     //   <Title />
@@ -110,10 +115,14 @@ export default class Landing extends Component {
             }
             /* onClick={() => this.handleOnClick(moonTitleArray[idx])} */
           >
-            {[...Array(4)].map((val, idx) => {
+            {[...Array(3)].map((val, idx) => {
               return (
                 <div onClick={() => this.handleOnClick(moonTitleArray[idx])}>
-                  <Moon className={"moon " + idx} title={moonTitleArray[idx]} />
+                  <Moon
+                    className={"moon " + idx}
+                    title={moonTitleArray[idx]}
+                    description={moonDescription[idx]}
+                  />
                 </div>
               );
             })}

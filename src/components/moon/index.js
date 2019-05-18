@@ -7,7 +7,8 @@ export default class Moon extends Component {
   render() {
     return (
       <div className={this.props.className}>
-        <h1>{this.props.title}</h1>
+        <h2>{this.props.title}</h2>
+        <p>{this.props.description}</p>
       </div>
     );
   }
