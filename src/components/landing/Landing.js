@@ -25,9 +25,10 @@ export default class Landing extends Component {
   //   document.removeEventListener("scroll", this.overrideScroll);
   // }
 
-  handleOnClick() {
+  handleOnClick(path) {
+    console.log("onclick");
     console.log("props", this.props);
-    this.props.history.push("/about");
+    this.props.history.push("/" + path);
   }
 
   // function that overrides the scroll
@@ -69,7 +70,7 @@ export default class Landing extends Component {
     /*     let moonArray = [];
      */
 
-    let moonTitleArray = ["Hi1", "Hi2", "Hi3", "Hi4"];
+    let moonTitleArray = ["About", "Work", "Hi3", "Hi4"];
     // return [
     // <div className="landing">
     //   <Title />
@@ -107,10 +108,13 @@ export default class Landing extends Component {
               "planet-container " +
               (this.state.loaded ? "scrolled-up" : "default")
             }
+            /* onClick={() => this.handleOnClick(moonTitleArray[idx])} */
           >
             {[...Array(4)].map((val, idx) => {
               return (
-                <Moon className={"moon " + idx} title={moonTitleArray[idx]} />
+                <div onClick={() => this.handleOnClick(moonTitleArray[idx])}>
+                  <Moon className={"moon " + idx} title={moonTitleArray[idx]} />
+                </div>
               );
             })}
           </div>
