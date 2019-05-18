@@ -1,44 +1,69 @@
-html,
-body {
-  /* height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding: 0; */
-  background: #031427;
-  /*   overflow: hidden;
- */
-}
-
 .container {
-  /* width: 100%;
-  height: 100%; */
-  /*   overflow-y: scroll; */
-/*   scroll-snap-type: y mandatory;
- */
- text-align: center;
+  text-align: center;
   .landing {
-    /* width: 100%;
-    height: 100%; */
-   /*  text-align: center; */
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 65vh;
-  /*  background: violet;  */
-    /* scroll-snap-align: center;  */
-    .title {
-    /*   background: yellow;    */   
-      /* height: 60vh; */
-
-     /*  top: 50%;
-      left: 50%;
-      width: 50%;
-      margin: -15% 0 0 -25%; */
-      color: #d6e3f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    &.hide {
+      // display: none;
+      opacity: 0;
     }
   }
-  .menu {
-    background: blue;
-    color: #d6e3f8;
+  .globe-container {
+    z-index: 10;
+    transition: transform 0.5s ease;
+    &.default {
+      transform: translateY(0);
+    }
+    &.scrolled-up {
+      transform: translateY(-70%);
+    }
+    .planet-container {
+      &.default {
+        visibility: hidden;
+        opacity: 0;
+      }
+      &.scrolled-up {
+        transition: opacity 1s ease-in;
+      }
+      .moon {
+        position: absolute;
+        background: white;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        transition: all 0.5s ease-in;
+        &.\30 {
+          top: 0%;
+          left: 14%;
+          background: #9d5c63;
+        }
+        &.\31 {
+          top: 35%;
+          left: 75%;
+          background: #fcd167;
+        }
+        &.\32 {
+          top: 70%;
+          left: 14%;
+          background: #6a65b3;
+        }
+
+        p {
+          display: none;
+        }
+        &:hover {
+          background: #d6e3f8;
+          width: 200px;
+          height: 200px;
+          p {
+            display: inline;
+          }
+        }
+      }
+    }
   }
 }

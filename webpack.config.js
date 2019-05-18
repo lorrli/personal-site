@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   module: {
@@ -6,7 +7,17 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ["babel-loader"]
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
       },
       {
         test: /\.scss$/,
@@ -26,18 +37,8 @@ module.exports = {
         ]
       },
       {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: "babel-loader"
-          },
-          {
-            loader: "react-svg-loader",
-            options: {
-              jsx: true // true outputs JSX tags
-            }
-          }
-        ]
+        test: /\.svg$/i,
+        use: "raw-loader"
       }
     ]
   },
@@ -49,7 +50,13 @@ module.exports = {
     publicPath: "/",
     filename: "bundle.js"
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebPackPlugin({
+      template: "./src/index.html",
+      filename: "./index.html"
+    })
+  ],
   devServer: {
     contentBase: "./dist",
     hot: true,
