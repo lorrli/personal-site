@@ -66,7 +66,10 @@ export default class Landing extends Component {
   render() {
     console.log("2", this.state.loaded);
     console.log("3", this.scrolled);
-    let moonArray = [];
+    /*     let moonArray = [];
+     */
+
+    let moonTitleArray = ["Hi1", "Hi2", "Hi3", "Hi4"];
     // return [
     // <div className="landing">
     //   <Title />
@@ -99,12 +102,19 @@ export default class Landing extends Component {
           {/*  {{for ( i = 0; i < 3; i++) {
                <Moon className={"moon-" +i} backgroundColor={SVGFEGaussianB />     
           }}} */}
-          {[...Array(4)].map((val, idx) => {
-            return <Moon className={"moon " + idx} />;
-          })}
+          <div
+            className={
+              "planet-container " +
+              (this.state.loaded ? "scrolled-up" : "default")
+            }
+          >
+            {[...Array(4)].map((val, idx) => {
+              return (
+                <Moon className={"moon " + idx} title={moonTitleArray[idx]} />
+              );
+            })}
+          </div>
         </div>
-
-        {/* add moons, use the state with delay to control them coming in , ease in/out the globe + title*/}
       </div>
     );
   }
