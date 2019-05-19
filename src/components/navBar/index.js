@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import styles from "./styles.scss";
 
 export default class NavBar extends Component {
@@ -19,8 +20,9 @@ export default class NavBar extends Component {
           Home
         </a>
         <a
-          className={this.props.active == "resume" ? "active" : null}
-          href="resume"
+          /*  className={this.props.active == "resume" ? "active" : null} */
+          href="../../../assets/3ADevResume.pdf"
+          target="_blank"
         >
           Resume
         </a>

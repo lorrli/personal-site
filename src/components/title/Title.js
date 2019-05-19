@@ -6,8 +6,8 @@ export default class Title extends Component {
     return (
       <div className="landing">
         <div className="title">
-          <h1>Lorraine Li</h1>
-          <p>description here</p>
+          <h1>LORRAINE LI</h1>
+          <p>Systems Design Engineer</p>
         </div>
       </div>
     );

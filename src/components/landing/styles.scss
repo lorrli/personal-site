@@ -39,28 +39,23 @@
         &.\30 {
           top: 0%;
           left: 14%;
-          background: green;
+          background: #9d5c63;
         }
         &.\31 {
-          top: 0%;
+          top: 35%;
           left: 75%;
-          background: red;
+          background: #fcd167;
         }
         &.\32 {
           top: 70%;
           left: 14%;
-          background: blue;
-        }
-        &.\33 {
-          top: 70%;
-          left: 75%;
-          background: yellow;
+          background: #6a65b3;
         }
         p {
           display: none;
         }
         &:hover {
-          background: grey;
+          background: #d6e3f8;
           width: 200px;
           height: 200px;
           p {
